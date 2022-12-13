@@ -3,7 +3,7 @@
  */
 
 /**
- * Initialization Code and shared classes of library be.wl.examplelibrary.
+ * Initialization Code and shared classes of library nl.gasunie.workzone.library.
  */
 sap.ui.define(["sap/ui/core/library"], // library dependency
 	function () {
@@ -14,7 +14,7 @@ sap.ui.define(["sap/ui/core/library"], // library dependency
 		 * Demo Lib
 		 *
 		 * @namespace
-		 * @name be.wl.examplelibrary
+		 * @name nl.gasunie.workzone.library
 		 * @author SAP SE
 		 * @version 1.0.0
 		 * @public
@@ -22,19 +22,19 @@ sap.ui.define(["sap/ui/core/library"], // library dependency
 
 		// delegate further initialization of this library to the Core
 		sap.ui.getCore().initLibrary({
-			name: "be.wl.examplelibrary",
+			name: "nl.gasunie.workzone.library",
 			version: "1.0.0",
 			dependencies: ["sap.ui.core"],
 			noLibraryCSS: true,
 			types: [],
 			interfaces: [],
 			controls: [
-				"be.wl.examplelibrary.controls.Example"
+				"nl.gasunie.workzone.library.controls.Example"
 			],
 			elements: []
 		});
 
-		const oLibrary = be.wl.examplelibrary;
+		const oLibrary = nl.gasunie.workzone.library;
 
 		oLibrary.getHelloWorld = () => {
 			return "Hello world";

@@ -1,7 +1,7 @@
 /*!
  * ${copyright}
  */
-// Provides control be.wl.examplelibrary.Example.
+// Provides control nl.gasunie.workzone.library.Example.
 sap.ui.define([
 	"./../library", "sap/ui/core/Control", "./ExampleRenderer"
 ], function (library, Control, ExampleRenderer) {
@@ -22,12 +22,12 @@ sap.ui.define([
 	 *
 	 * @constructor
 	 * @public
-	 * @alias be.wl.examplelibrary.controls.Example
+	 * @alias nl.gasunie.workzone.library.controls.Example
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */
-	var Example = Control.extend("be.wl.examplelibrary.controls.Example", {
+	var Example = Control.extend("nl.gasunie.workzone.library.controls.Example", {
 		metadata: {
-			library: "be.wl.examplelibrary",
+			library: "nl.gasunie.workzone.library",
 			properties: {
 				/**
 				 * text

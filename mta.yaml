@@ -23,12 +23,12 @@ modules:
         - Name: com_balta_exampleLibrary_WorkzoneLibrary_html_repo_host
           ServiceInstanceName: WorkzoneLibrary-html5-app-host-service
           ServiceKeyName: WorkzoneLibrary_html_repo_host-key
-          sap.cloud.service: be.wl.exampleLibrary
+          sap.cloud.service: nl.gasunie.workzone.library
         - Authentication: OAuth2UserTokenExchange
           Name: com_balta_exampleLibrary_uaa_WorkzoneLibrary
           ServiceInstanceName: WorkzoneLibrary-xsuaa-service
           ServiceKeyName: uaa_WorkzoneLibrary-key
-          sap.cloud.service: be.wl.exampleLibrary
+          sap.cloud.service: nl.gasunie.workzone.library
         existing_destinations_policy: update
   build-parameters:
     no-source: true

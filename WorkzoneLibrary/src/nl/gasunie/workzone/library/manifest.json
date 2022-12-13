@@ -2,7 +2,7 @@
 	"_version": "1.12.0",
 
 	"sap.app": {
-		"id": "be.wl.examplelibrary",
+		"id": "nl.gasunie.workzone.library",
 		"type": "library",
 		"applicationVersion": {
 			"version": "1.0.0"
@@ -14,7 +14,7 @@
 	},
 	"sap.cloud": {
 		"public": true,
-		"service": "be.wl.exampleLibrary"
+		"service": "nl.gasunie.workzone.library"
 	},
 	"sap.ui": {
 		"technology": "UI5",
@@ -46,7 +46,7 @@
 			"i18n": "messagebundle.properties",
 			"css": true,
 			"content": {
-				"controls": ["be.wl.examplelibrary.Example"],
+				"controls": ["nl.gasunie.workzone.library.Example"],
 				"elements": [],
 				"types": [],
 				"interfaces": []
