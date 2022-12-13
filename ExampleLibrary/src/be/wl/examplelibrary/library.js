@@ -34,8 +34,14 @@ sap.ui.define(["sap/ui/core/library"], // library dependency
 			elements: []
 		});
 
+		const oLibrary = be.wl.examplelibrary;
+
+		oLibrary.getHelloWorld = () => {
+			return "Hello world";
+		};
+
 		/* eslint-disable */
-		return be.wl.examplelibrary;
+		return oLibrary;
 		/* eslint-enable */
 
 	}, /* bExport= */ false);
