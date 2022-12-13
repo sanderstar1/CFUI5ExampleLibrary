@@ -1,78 +1,78 @@
 _schema-version: "3.2"
-ID: ExampleLibrary
+ID: WorkzoneLibrary
 version: 0.0.1
 modules:
-- name: ExampleLibrary-destination-content
+- name: WorkzoneLibrary-destination-content
   type: com.sap.application.content
   requires:
-  - name: uaa_ExampleLibrary
+  - name: uaa_WorkzoneLibrary
     parameters:
       service-key:
-        name: uaa_ExampleLibrary-key
-  - name: ExampleLibrary_html_repo_host
+        name: uaa_WorkzoneLibrary-key
+  - name: WorkzoneLibrary_html_repo_host
     parameters:
       service-key:
-        name: ExampleLibrary_html_repo_host-key
-  - name: ExampleLibrary-destination-service
+        name: WorkzoneLibrary_html_repo_host-key
+  - name: WorkzoneLibrary-destination-service
     parameters:
       content-target: true     
   parameters:
     content:
       subaccount:
         destinations:
-        - Name: com_balta_exampleLibrary_ExampleLibrary_html_repo_host
-          ServiceInstanceName: ExampleLibrary-html5-app-host-service
-          ServiceKeyName: ExampleLibrary_html_repo_host-key
+        - Name: com_balta_exampleLibrary_WorkzoneLibrary_html_repo_host
+          ServiceInstanceName: WorkzoneLibrary-html5-app-host-service
+          ServiceKeyName: WorkzoneLibrary_html_repo_host-key
           sap.cloud.service: be.wl.exampleLibrary
         - Authentication: OAuth2UserTokenExchange
-          Name: com_balta_exampleLibrary_uaa_ExampleLibrary
-          ServiceInstanceName: ExampleLibrary-xsuaa-service
-          ServiceKeyName: uaa_ExampleLibrary-key
+          Name: com_balta_exampleLibrary_uaa_WorkzoneLibrary
+          ServiceInstanceName: WorkzoneLibrary-xsuaa-service
+          ServiceKeyName: uaa_WorkzoneLibrary-key
           sap.cloud.service: be.wl.exampleLibrary
         existing_destinations_policy: update
   build-parameters:
     no-source: true
-- name: ExampleLibrary_ui_deployer
+- name: WorkzoneLibrary_ui_deployer
   type: com.sap.application.content
   path: .
   requires:
-  - name: ExampleLibrary_html_repo_host
+  - name: WorkzoneLibrary_html_repo_host
     parameters:
       content-target: true
   build-parameters:
     build-result: resources
     requires:
     - artifacts:
-      - ExampleLibrary-content.zip
-      name: ExampleLibrary
+      - WorkzoneLibrary-content.zip
+      name: WorkzoneLibrary
       target-path: resources/
-- name: ExampleLibrary
+- name: WorkzoneLibrary
   type: html5
-  path: ExampleLibrary
+  path: WorkzoneLibrary
   build-parameters:
     builder: custom
     commands:
     - npm run build
     supported-platforms: []
 resources:
-- name: ExampleLibrary-destination-service
+- name: WorkzoneLibrary-destination-service
   type: org.cloudfoundry.managed-service
   parameters:
     service: destination
-    service-name: ExampleLibrary-destination-service
+    service-name: WorkzoneLibrary-destination-service
     service-plan: lite
-- name: ExampleLibrary_html_repo_host
+- name: WorkzoneLibrary_html_repo_host
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
-    service-name: ExampleLibrary-html5-app-host-service
+    service-name: WorkzoneLibrary-html5-app-host-service
     service-plan: app-host
-- name: uaa_ExampleLibrary
+- name: uaa_WorkzoneLibrary
   type: org.cloudfoundry.managed-service
   parameters:
     path: ./xs-security.json
     service: xsuaa
-    service-name: ExampleLibrary-xsuaa-service
+    service-name: WorkzoneLibrary-xsuaa-service
     service-plan: application
 build-parameters:
   before-all:
