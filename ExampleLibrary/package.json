@@ -13,7 +13,7 @@
     "scripts": {
         "build": "npm run clean && ui5 build --include-task=generateManifestBundle generateCachebusterInfo && npm run flatten && npm run clean-after-flatten && cp ./xs-app.json dist  && npm run zip",
         "zip": "cd dist && npx bestzip ../ExampleLibrary-content.zip *",
-        "flatten": "cp -r dist/resources/be/wl/examplelibrary/* dist && cp dist/resources/be/wl/examplelibrary/.library dist ",
+        "flatten": "cp -r dist/resources/nl/gasunie/workzone/library/* dist && cp dist/resources/nl/gasunie/workzone/library/.library dist ",
         "clean": "npx rimraf ExampleLibrary-content.zip dist",
         "clean-after-flatten": "rm -rf dist/resources dist/test-resources"
     }
