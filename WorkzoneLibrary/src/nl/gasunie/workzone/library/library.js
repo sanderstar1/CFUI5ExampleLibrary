@@ -37,7 +37,7 @@ sap.ui.define(["sap/ui/core/library"], // library dependency
 		const oLibrary = nl.gasunie.workzone.library;
 
 		oLibrary.getHelloWorld = () => {
-			return "Hello world part VI";
+			return "Hello world part VII";
 		};
 
 		/* eslint-disable */
