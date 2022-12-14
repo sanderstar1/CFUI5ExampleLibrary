@@ -5,10 +5,12 @@
 /**
  * Initialization Code and shared classes of library nl.gasunie.workzone.library.
  */
-sap.ui.define(["sap/ui/core/library"], // library dependency
-	function () {
+sap.ui.define(["sap/ui/core/library", "sap/m/library"], // library dependency
+	function (oCoreLibrary, oMobileLibrary) {
 
 		"use strict";
+
+		const oURLHelper = oMobileLibrary.URLHelper;
 
 		/**
 		 * Demo Lib
@@ -40,8 +42,42 @@ sap.ui.define(["sap/ui/core/library"], // library dependency
 
 		const oLibrary = nl.gasunie.workzone.library;
 
+		// Private methods
+		function isMobile() {
+			// TODO make shorter
+			return (sap.ui.Device.system.phone || sap.ui.Device.system.tablet) && (sap.ui.Device.os.ios || sap.ui.Device.os.macintosh || sap.ui.Device.os.android);
+		};
+
+		/**
+         * The URL is openend via set timeout.
+         *
+         * Trick is done because of Safari (on mobile).
+         *
+         * Safari will not open the URL because this function
+         * is called in async functions.
+         * See calling tree of this function. There is
+         * an odata call done before the window.open call.
+         * The setTimeout will make it work.
+         *
+         * @param {*} sURL mobile URL to open
+         */
+		function openMobileUrl(sURL) {
+			setTimeout(() => {
+                window.open(sURL);
+            });
+		};
+
 		oLibrary.getHelloWorld = () => {
-			return "Hello world part VIII";
+			return "Hello world part IX";
+		};
+
+		// Expose openUrl to outside
+		oLibrary.openUrl = (sURL) => {
+			if (isMobile()) {
+                openMobileUrl(sURL);
+            } else {
+                oURLHelper.redirect(sURL, true);
+            }
 		};
 
 		/* eslint-disable */
