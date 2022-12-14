@@ -34,6 +34,10 @@ sap.ui.define(["sap/ui/core/library"], // library dependency
 			elements: []
 		});
 
+		// Consume microsoft libraries
+		sap.ui.require([ "nl/gasunie/workzone/library/libs/msal" ]);
+        sap.ui.require([ "nl/gasunie/workzone/library/libs/graph" ]);
+
 		const oLibrary = nl.gasunie.workzone.library;
 
 		oLibrary.getHelloWorld = () => {
